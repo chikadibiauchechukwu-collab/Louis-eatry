@@ -1,0 +1,317 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Louis Eatery — Authentic Nigerian Cuisine</title>
+  <meta name="description" content="Experience the vibrant taste of Nigeria at Louis Eatery. Bold flavors, soulful food — order on WhatsApp today." />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Swiper CSS for testimonials -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Main CSS -->
+   <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Toast Notification -->
+  <div class="toast" id="successToast">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    Order sent to WhatsApp! We'll confirm shortly.
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <div class="nav-logo"><span class="logo-name">Louis Eatery</span></div>
+      <div class="nav-links">
+        <a href="#about">Our Story</a>
+        <a href="#menu">Menu</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Dark mode">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+        </button>
+        <button class="cart-nav-btn" id="cartNavBtn" aria-label="Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <a href="https://wa.me/2348107620605" target="_blank" class="btn btn-primary">Order Now</a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#about" class="mobile-link">Our Story</a></li>
+        <li><a href="#menu" class="mobile-link">Menu</a></li>
+        <li><a href="#reviews" class="mobile-link">Reviews</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <img src="./Images/hero.png" alt="Nigerian feast" class="hero-img" />
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-badge reveal">Authentic Nigerian Cuisine</div>
+        <h1 class="hero-title reveal">Bold Flavors.<br /><span class="text-primary">Soulful</span> Food.</h1>
+        <p class="hero-sub reveal">Experience the vibrant taste of Nigeria at Louis Eatery. From smoky party jollof to rich egusi, we bring warmth to your table.</p>
+        <div class="hero-btns reveal">
+          <button class="btn btn-primary btn-lg" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Explore Menu</button>
+          <a href="https://wa.me/2348107620605" target="_blank" class="btn btn-outline btn-lg">WhatsApp Us</a>
+        </div>
+        <div class="hero-stats reveal">
+          <div class="hero-stat"><span class="stat-value">9+</span><span class="stat-label">Signature Dishes</span></div>
+          <div class="hero-stat"><span class="stat-value">4.8★</span><span class="stat-label">Avg Rating</span></div>
+          <div class="hero-stat"><span class="stat-value">500+</span><span class="stat-label">Happy Customers</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about section-pad" id="about">
+      <div class="container about-grid">
+        <div class="about-text">
+          <h2 class="reveal">Food that feels like a <span class="text-secondary">celebration</span>.</h2>
+          <p class="reveal">We don't do subtle. Nigerian food is bold, colorful, and unapologetic. At Louis Eatery, every dish is crafted with generations of love, using authentic spices and techniques passed down through our family.</p>
+          <p class="reveal">Whether you're craving the smoky depth of our Jollof Rice or the comforting embrace of our Pepper Soup, you're not just eating — you're joining our family table.</p>
+          <div class="about-features reveal">
+            <div class="feature"><div class="feature-icon secondary">❤️</div><div><h4>Made with Love</h4><p>Authentic recipes prepared fresh daily.</p></div></div>
+            <div class="feature"><div class="feature-icon primary">👥</div><div><h4>Community First</h4><p>Generous portions meant to be shared.</p></div></div>
+          </div>
+        </div>
+        <div class="about-img reveal"><img src="./Images/jollof.png" alt="Delicious Nigerian food" /></div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section section-pad" id="menu">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Our Signature <span class="text-primary">Delicacies</span></h2>
+          <p>Click any dish to see varieties. Bold spices, rich textures, unforgettable flavors.</p>
+        </div>
+        <div class="search-wrap reveal">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="menuSearch" placeholder="Search dishes..." class="search-input" />
+          <button class="search-clear" id="searchClear" style="display:none">✕</button>
+        </div>
+        <div class="category-tabs reveal" id="categoryTabs">
+          <button class="category-btn active" data-category="all">All</button>
+          <button class="category-btn" data-category="rice">Rice Dishes</button>
+          <button class="category-btn" data-category="soup">Soups & Stews</button>
+          <button class="category-btn" data-category="snacks">Snacks</button>
+        </div>
+        <div class="menu-grid" id="menuGrid">
+          <!-- Jollof -->
+          <div class="menu-card" data-id="jollof1" data-name="Party Jollof Rice" data-price="3500" data-img="https://placehold.co/400x300/d44f00/fff8f2?text=Jollof" data-category="rice" data-varieties='["Classic Party Jollof - ₦3,500","Jollof with Chicken - ₦4,200","Jollof with Beef - ₦4,500","Vegetable Jollof - ₦3,800"]'>
+            <div class="menu-card-img"><img src="./Images/jollof.png" alt="Jollof Rice"></div>
+            <div class="menu-card-content"><h3>Party Jollof Rice</h3><p>Smoky, rich, and aromatic — the king of Nigerian rice dishes.</p><div class="menu-card-footer"><span class="price animated-price">₦3,500</span><button class="btn-add-cart" data-add="jollof1">Add to Cart</button></div></div>
+          </div>
+          <!-- Egusi -->
+          <div class="menu-card" data-id="egusi1" data-name="Egusi Soup" data-price="4500" data-img="https://placehold.co/400x300/a32020/fff8f2?text=Egusi" data-category="soup" data-varieties='["Classic Egusi - ₦4,500","Egusi with Goat Meat - ₦5,200","Egusi with Fish - ₦5,000","Egusi with Ugu & Okra - ₦4,800"]'>
+            <div class="menu-card-img"><img src="./Images/egusi.png" alt="Egusi Soup"></div>
+            <div class="menu-card-content"><h3>Egusi Soup</h3><p>Ground melon seeds cooked with leafy greens and assorted meat.</p><div class="menu-card-footer"><span class="price animated-price">₦4,500</span><button class="btn-add-cart" data-add="egusi1">Add to Cart</button></div></div>
+          </div>
+          <!-- Pepper Soup -->
+          <div class="menu-card" data-id="peppersoup1" data-name="Pepper Soup" data-price="3800" data-img="https://placehold.co/400x300/ffaa00/2e1a12?text=Pepper+Soup" data-category="soup" data-varieties='["Goat Meat Pepper Soup - ₦3,800","Catfish Pepper Soup - ₦4,000","Chicken Pepper Soup - ₦3,500","Assorted Meat Pepper Soup - ₦4,500"]'>
+            <div class="menu-card-img"><img src="./Images/peppersoup.png" alt="Pepper Soup"></div>
+            <div class="menu-card-content"><h3>Pepper Soup</h3><p>Spicy, aromatic broth with your choice of goat meat or fish.</p><div class="menu-card-footer"><span class="price animated-price">₦3,800</span><button class="btn-add-cart" data-add="peppersoup1">Add to Cart</button></div></div>
+          </div>
+          <!-- Puff Puff -->
+          <div class="menu-card" data-id="puffpuff1" data-name="Puff Puff" data-price="1500" data-img="https://placehold.co/400x300/d44f00/fff8f2?text=Puff+Puff" data-category="snacks" data-varieties='["Classic Puff Puff (6pcs) - ₦1,500","Puff Puff with Chocolate - ₦2,000","Spicy Puff Puff - ₦1,800","Puff Puff with Honey - ₦1,700"]'>
+            <div class="menu-card-img"><img src="./Images/puffpuff.png" alt="Puff Puff"></div>
+            <div class="menu-card-content"><h3>Puff Puff</h3><p>Classic Nigerian fried dough bites — soft, sweet, and irresistible.</p><div class="menu-card-footer"><span class="price animated-price">₦1,500</span><button class="btn-add-cart" data-add="puffpuff1">Add to Cart</button></div></div>
+          </div>
+          <!-- Amala & Ewedu with Gbegiri -->
+<div class="menu-card" data-id="amala1" data-name="Amala &amp; Ewedu with Gbegiri" data-price="4000" data-img="https://placehold.co/400x300/8B4513/FFF8F2?text=Amala+%26+Ewedu" data-category="soup" data-varieties='["Classic Amala + Ewedu + Gbegiri - ₦4,000","Amala + Ewedu + Beef Stew - ₦4,500","Amala + Ewedu + Assorted Meat - ₦5,000","Amala + Ewedu + Fish - ₦4,800"]'>
+  <div class="menu-card-img"><img src="./Images/amala.png" alt="Amala and Ewedu"></div>
+  <div class="menu-card-content"><h3>Amala &amp; Ewedu with Gbegiri</h3><p>Soft yam flour served with jute leaves soup and bean stew — a Yoruba classic.</p><div class="menu-card-footer"><span class="price">₦4,000</span><button class="btn-add-cart" data-add="amala1">Add to Cart</button></div></div>
+</div>
+
+<!-- Banga Soup -->
+<div class="menu-card" data-id="banga1" data-name="Banga Soup" data-price="4200" data-img="https://placehold.co/400x300/FF8C00/FFF8F2?text=Banga+Soup" data-category="soup" data-varieties='["Classic Banga - ₦4,200","Banga with Catfish - ₦4,800","Banga with Goat Meat - ₦5,000","Banga with Starch - ₦4,500"]'>
+  <div class="menu-card-img"><img src="./Images/banga-soup.png" alt="Banga Soup"></div>
+  <div class="menu-card-content"><h3>Banga Soup</h3><p>Rich palm nut soup with spices and seafood — a Delta delight.</p><div class="menu-card-footer"><span class="price">₦4,200</span><button class="btn-add-cart" data-add="banga1">Add to Cart</button></div></div>
+</div>
+
+<!-- Suya -->
+<div class="menu-card" data-id="suya1" data-name="Suya" data-price="3000" data-img="https://placehold.co/400x300/DC143C/FFF8F2?text=Suya" data-category="snacks" data-varieties='["Beef Suya (10 pcs) - ₦3,000","Chicken Suya - ₦3,500","Cow Foot Suya - ₦3,800","Spicy Sausage Suya - ₦2,500"]'>
+  <div class="menu-card-img"><img src="./Images/suya-2.png" alt="Suya"></div>
+  <div class="menu-card-content"><h3>Suya</h3><p>Northern-style spicy grilled meat with yaji seasoning and onions.</p><div class="menu-card-footer"><span class="price">₦3,000</span><button class="btn-add-cart" data-add="suya1">Add to Cart</button></div></div>
+</div>
+
+<!-- Nigerian Fried Rice -->
+<div class="menu-card" data-id="friedrice1" data-name="Nigerian Fried Rice" data-price="3800" data-img="https://placehold.co/400x300/FFD700/2E1A12?text=Fried+Rice" data-category="rice" data-varieties='["Classic Fried Rice - ₦3,800","Fried Rice with Chicken - ₦4,500","Fried Rice with Shrimp - ₦4,800","Vegetable Fried Rice - ₦4,000"]'>
+  <div class="menu-card-img"><img src="./Images/fried-rice.png" alt="Fried Rice"></div>
+  <div class="menu-card-content"><h3>Nigerian Fried Rice</h3><p>Colourful rice with carrots, peas, liver, and spices — party favourite.</p><div class="menu-card-footer"><span class="price">₦3,800</span><button class="btn-add-cart" data-add="friedrice1">Add to Cart</button></div></div>
+</div>
+
+<!-- Moi Moi -->
+<div class="menu-card" data-id="moimoi1" data-name="Moi Moi" data-price="1200" data-img="https://placehold.co/400x300/FFA07A/2E1A12?text=Moi+Moi" data-category="snacks" data-varieties='["Classic Moi Moi - ₦1,200","Moi Moi with Egg - ₦1,500","Moi Moi with Corned Beef - ₦1,800","Moi Moi with Fish - ₦1,600"]'>
+  <div class="menu-card-img"><img src="./Images/moi-moi.png" alt="Moi Moi"></div>
+  <div class="menu-card-content"><h3>Moi Moi</h3><p>Steamed bean pudding with peppers, onions, and your choice of filling.</p><div class="menu-card-footer"><span class="price">₦1,200</span><button class="btn-add-cart" data-add="moimoi1">Add to Cart</button></div></div>
+</div>
+
+<!-- Okro Soup -->
+<div class="menu-card" data-id="okro1" data-name="Okro Soup" data-price="3500" data-img="https://placehold.co/400x300/228B22/FFF8F2?text=Okro+Soup" data-category="soup" data-varieties='["Classic Okro Soup - ₦3,500","Okro with Goat Meat - ₦4,200","Okro with Fish - ₦3,800","Okro with Assorted Meat - ₦4,500"]'>
+  <div class="menu-card-img"><img src="./Images/okra-soup.png" alt="Okro Soup"></div>
+  <div class="menu-card-content"><h3>Okro Soup</h3><p>Slime‑rich okra soup with assorted meat and traditional spices.</p><div class="menu-card-footer"><span class="price">₦3,500</span><button class="btn-add-cart" data-add="okro1">Add to Cart</button></div></div>
+</div>
+
+<!-- Akara (Bean Cake) -->
+<div class="menu-card" data-id="akara1" data-name="Akara" data-price="1000" data-img="https://placehold.co/400x300/DAA520/2E1A12?text=Akara" data-category="snacks" data-varieties='["Classic Akara (6 pcs) - ₦1,000","Akara with Kuli Kuli - ₦1,300","Akara with Pepper Sauce - ₦1,200","Akara with Yaji - ₦1,100"]'>
+  <div class="menu-card-img"><img src="./Images/akara.png" alt="Akara"></div>
+  <div class="menu-card-content"><h3>Akara</h3><p>Crispy fried bean cakes — perfect breakfast or snack with pap.</p><div class="menu-card-footer"><span class="price">₦1,000</span><button class="btn-add-cart" data-add="akara1">Add to Cart</button></div></div>
+</div>
+
+<!-- Ofada Rice with Ayamase -->
+<div class="menu-card" data-id="ofada1" data-name="Ofada Rice &amp; Ayamase" data-price="5000" data-img="https://placehold.co/400x300/556B2F/FFF8F2?text=Ofada+Rice" data-category="rice" data-varieties='["Ofada + Ayamase (Small) - ₦3,500","Ofada + Ayamase (Large) - ₦5,000","Ofada + Ayamase + Beef - ₦6,000","Ofada + Ayamase + Fish - ₦5,500"]'>
+  <div class="menu-card-img"><img src="./Images/ofada-rice.png" alt="Ofada Rice"></div>
+  <div class="menu-card-content"><h3>Ofada Rice &amp; Ayamase</h3><p>Unpolished local rice with spicy green pepper stew and assorted meat.</p><div class="menu-card-footer"><span class="price">₦5,000</span><button class="btn-add-cart" data-add="ofada1">Add to Cart</button></div></div>
+</div>
+
+<!-- Chin Chin -->
+<div class="menu-card" data-id="chinchin1" data-name="Chin Chin" data-price="800" data-img="https://placehold.co/400x300/CD853F/2E1A12?text=Chin+Chin" data-category="snacks" data-varieties='["Classic Chin Chin (200g) - ₦800","Chocolate Chin Chin - ₦1,000","Spicy Chin Chin - ₦900","Honey Chin Chin - ₦950"]'>
+  <div class="menu-card-img"><img src="./Images/chin-chin.png" alt="Chin Chin"></div>
+  <div class="menu-card-content"><h3>Chin Chin</h3><p>Crunchy sweet fried dough snack — addictive and perfect with any drink.</p><div class="menu-card-footer"><span class="price">₦800</span><button class="btn-add-cart" data-add="chinchin1">Add to Cart</button></div></div>
+</div>
+
+<!-- Zobo (Hibiscus Drink) -->
+<div class="menu-card" data-id="zobo1" data-name="Zobo Drink" data-price="500" data-img="https://placehold.co/400x300/8B0000/FFF8F2?text=Zobo" data-category="snacks" data-varieties='["Regular Zobo (500ml) - ₦500","Zobo with Ginger (500ml) - ₦600","Zobo with Pineapple - ₦700","Zobo Family Size (1.5L) - ₦1,500"]'>
+  <div class="menu-card-img"><img src="./Images/zobo.png" alt="Zobo Drink"></div>
+  <div class="menu-card-content"><h3>Zobo Drink</h3><p>Refreshing hibiscus tea with ginger, pineapple, and natural sweeteners.</p><div class="menu-card-footer"><span class="price">₦500</span><button class="btn-add-cart" data-add="zobo1">Add to Cart</button></div></div>
+</div>
+        </div>
+        
+      </div>
+      
+    </section>
+    
+    
+
+    <!-- Varieties Modal (shows when clicking a cuisine) -->
+    <div id="varietyOverlay" class="modal-overlay"></div>
+    <div id="varietyModal" class="variety-modal">
+      <div class="modal-header"><h3 id="varietyTitle">Dish Varieties</h3><button id="closeVarietyModal" class="modal-close">&times;</button></div>
+      <div id="varietyList" class="variety-list"></div>
+    </div>
+
+    <!-- Customer Reviews Slider -->
+    <section class="reviews section-pad" id="reviews">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>What Our <span class="text-primary">Customers Say</span></h2>
+          <p>Real reviews from happy food lovers.</p>
+        </div>
+        <div class="swiper reviews-swiper reveal">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide review-card"><p>"Best Jollof in town! The smoky flavor is unmatched."</p><h4>- Adaobi</h4><div class="stars">★★★★★</div></div>
+            <div class="swiper-slide review-card"><p>"Egusi soup tastes just like my grandmother's. Absolutely delicious!"</p><h4>- Chidi</h4><div class="stars">★★★★★</div></div>
+            <div class="swiper-slide review-card"><p>"Fast delivery and generous portions. My go-to for Nigerian food."</p><h4>- Ngozi</h4><div class="stars">★★★★☆</div></div>
+            <div class="swiper-slide review-card"><p>"Pepper soup cured my cold! Highly recommended."</p><h4>- Emeka</h4><div class="stars">★★★★★</div></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Map + Message Form -->
+    <section class="contact-section section-pad" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2>Get in <span class="text-primary">Touch</span></h2>
+          <p>Visit us or send a message — we'd love to hear from you.</p>
+        </div>
+        <div class="contact-grid">
+          <!-- Map -->
+          <div class="map-container reveal">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.927730028504!2d7.150315!3d4.800000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069c5a8b3e5b4b1%3A0x7c8a5b3e5b4b1c!2sAkpajo%2C%20Eleme%2C%20Rivers%20State!5e0!3m2!1sen!2sng!4v1710000000000!5m2!1sen!2sng" width="100%" height="300" style="border:0; border-radius: 1rem;" allowfullscreen="" loading="lazy"></iframe>
+            <p class="map-address">📍 Akpajo, Eleme, Rivers State, Nigeria</p>
+          </div>
+          <!-- Send a message form (WhatsApp) -->
+          <div class="contact-form reveal">
+            <h3>Send a Message / Order Details</h3>
+            <form id="whatsappMessageForm">
+              <input type="text" id="msgName" placeholder="Your full name" required>
+              <input type="tel" id="msgPhone" placeholder="Your phone number" required>
+              <textarea id="msgDetails" rows="4" placeholder="Your message or order details... (e.g., I'd like 2 portions of Jollof and 1 Egusi)" required></textarea>
+              <button type="submit" class="btn btn-primary btn-full">Send via WhatsApp</button>
+            </form>
+          </div>
+        </div>
+        <!-- Opening Hours & Delivery Info -->
+        <div class="info-grid reveal">
+          <div class="info-card"><h3>⏰ Opening Hours</h3><p>Mon - Fri: 9am - 9pm<br>Sat - Sun: 10am - 8pm</p></div>
+          <div class="info-card"><h3>🚚 Delivery Info</h3><p>Free delivery within Eleme (orders above ₦5,000).<br>Delivery time: 30-45 mins.</p></div>
+          <div class="info-card"><h3>📞 Contact</h3><p>Phone: +234 810 762 0605<br>WhatsApp: same number</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div><h3>Louis Eatery</h3><p>Authentic Nigerian Cuisine</p></div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div><p>&copy; <span id="year"></span> Louis Eatery. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div id="cartOverlay" class="cart-overlay"></div>
+  <div id="cartDrawer" class="cart-drawer">
+    <div class="cart-header"><h3>Your Cart <span id="drawerCount">0</span></h3><button id="cartClose" class="cart-close">&times;</button></div>
+    <div id="cartItems" class="cart-items"><div id="cartEmpty" class="cart-empty">Your cart is empty</div></div>
+    <div id="drawerFooter" class="cart-footer" style="display:none;">
+      <div class="cart-summary"><span>Subtotal:</span><span id="cartSubtotal">₦0</span></div>
+      <div class="cart-summary"><span>Delivery:</span><span>₦500</span></div>
+      <div class="cart-summary total"><span>Total:</span><span id="cartTotal">₦500</span></div>
+      <button id="proceedCheckoutBtn" class="btn btn-primary btn-full">Proceed to Checkout</button>
+      <button id="drawerContinue" class="btn btn-outline btn-full">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkoutOverlay" class="modal-overlay"></div>
+  <div id="checkoutModal" class="checkout-modal">
+    <div class="modal-header"><h3>Delivery Details</h3><button id="closeCheckout" class="modal-close">&times;</button></div>
+    <form id="checkoutForm">
+      <input type="text" id="checkoutName" placeholder="Full name" required>
+      <input type="tel" id="checkoutPhone" placeholder="Phone number" required>
+      <textarea id="checkoutAddress" placeholder="Delivery address" rows="2" required></textarea>
+      <textarea id="checkoutNote" placeholder="Special instructions (optional)" rows="2"></textarea>
+      <div class="modal-buttons"><button type="button" id="cancelCheckout" class="btn btn-outline">Cancel</button><button type="submit" class="btn btn-primary">Send Order on WhatsApp</button></div>
+    </form>
+  </div>
+
+  <!-- Floating Cart Bar -->
+  <div id="cartFloatBar" class="cart-float-bar" style="display:none;">
+    <span id="floatItemCount">0 items</span>
+    <span id="floatTotal">₦0</span>
+    <button id="cartFloatBtn" class="btn btn-primary">View Cart</button>
+  </div>
+
+  <!-- Floating WhatsApp button -->
+  <a href="https://wa.me/2348107620605" target="_blank" class="floating-wa" aria-label="Chat on WhatsApp">💬</a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
